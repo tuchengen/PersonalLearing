@@ -1,0 +1,22 @@
+1、点击菜单栏中的【开发工具】-【Visual Basic】
+2、再点击VBA编辑框上面的【插入】-【模块】，然后在插入的模块内输入如下代码：
+------------------------------------
+Sub 密码破解()
+Dim pj As Worksheet
+For Each pj In Worksheets
+pj.Protect AllowFiltering:=True
+pj.Unprotect
+Next
+End Sub
+------------------------------------
+以上能删除工作表密码
+
+
+Sub 工作簿密码破解()
+ActiveWorkbook.Sheets.Copy
+For Each sh In ActiveWorkbook.Sheets
+sh.Visible = True
+Next
+End Sub
+------------------------------------
+以上能删除工作薄密码
